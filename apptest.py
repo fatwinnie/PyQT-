@@ -125,4 +125,4 @@ if __name__ == '__main__':
     ui=CamShow()
     ui.show()
     sys.exit(app.exec_())
-    print(self.StopBt.setText())
+    
