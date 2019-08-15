@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\TING\Desktop\pyqt\test.ui'
+# Form implementation generated from reading ui file 'c:\Users\TING\Desktop\PyQT-\test.ui'
 #
 # Created by: PyQt5 UI code generator 5.11.3
 #
@@ -34,10 +34,10 @@ class Ui_CamShow(object):
         self.AnalyzeFm.setFrameShape(QtWidgets.QFrame.Box)
         self.AnalyzeFm.setFrameShadow(QtWidgets.QFrame.Raised)
         self.AnalyzeFm.setObjectName("AnalyzeFm")
-        self.label_3 = QtWidgets.QLabel(self.AnalyzeFm)
-        self.label_3.setGeometry(QtCore.QRect(60, 80, 211, 171))
-        self.label_3.setText("")
-        self.label_3.setObjectName("label_3")
+        self.DispCopyImg = QtWidgets.QLabel(self.AnalyzeFm)
+        self.DispCopyImg.setGeometry(QtCore.QRect(70, 60, 411, 216))
+        self.DispCopyImg.setText("")
+        self.DispCopyImg.setObjectName("DispCopyImg")
         self.label_8 = QtWidgets.QLabel(self.AnalyzeFm)
         self.label_8.setGeometry(QtCore.QRect(10, 10, 141, 31))
         self.label_8.setStyleSheet("font: 12pt \"Calibri\";")

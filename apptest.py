@@ -6,6 +6,7 @@ from PyQt5.QtGui import QPixmap
 import cv2
 import qimage2ndarray
 import time
+from PyQt5.QtCore import Qt,QRect
 
 class CamShow(QMainWindow,Ui_CamShow):
     def __init__(self,parent=None):
@@ -17,6 +18,7 @@ class CamShow(QMainWindow,Ui_CamShow):
         self.Timer = QTimer()
         self.Timer.timeout.connect(self.TimerOutFun)
         self.stopbt = 0
+        
 
     #控件初始化
     def PrepWidgets(self):
@@ -69,10 +71,21 @@ class CamShow(QMainWindow,Ui_CamShow):
         if success:   
             #self.Image = self.ColorAdjust(img)
             
-            self.DispImg()            
+            self.DispImg()
+            self.CopyImg()            
             #self.Image_num+=1
             if self.RecordFlag:
                 self.video_writer.write(self.img)
+
+    def CopyImg(self):
+        ret=QRect(50,200,411,10)       
+        CVimg = cv2.cvtColor(self.img,cv2.COLOR_BGR2RGB)       
+        qimg = qimage2ndarray.array2qimage(CVimg)
+        b=qimg.copy(ret)
+
+        self.DispCopyImg.setPixmap(QPixmap(b))
+        self.DispCopyImg.show()
+
                        
     
     def DispImg(self):
