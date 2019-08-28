@@ -7,6 +7,9 @@ import cv2
 import qimage2ndarray
 import time
 from PyQt5.QtCore import Qt,QRect
+import numpy as np
+import pyqtgraph
+from PyQt5 import QtGui,QtCore
 
 class CamShow(QMainWindow,Ui_CamShow):
     def __init__(self,parent=None):
@@ -18,6 +21,7 @@ class CamShow(QMainWindow,Ui_CamShow):
         self.Timer = QTimer()
         self.Timer.timeout.connect(self.TimerOutFun)
         self.stopbt = 0
+        self.AvgPlot.plotItem.showGrid(True, True, 0.7)
         
 
     #控件初始化
@@ -43,6 +47,7 @@ class CamShow(QMainWindow,Ui_CamShow):
         self.StopBt.clicked.connect(self.StopCamera)
         self.RecordBt.clicked.connect(self.RecordCamera)
         self.ExitBt.clicked.connect(self.ExitApp)
+        self.btnUpdate.clicked.connect(self.update)
         
 
     def StartCamera(self):
@@ -126,6 +131,27 @@ class CamShow(QMainWindow,Ui_CamShow):
             self.StopBt.setEnabled(True)
             self.ExitBt.setEnabled(True)
 
+    def showUpdate(self):
+        t=time.clock()
+        points=100 #number of data points
+        X=np.arange(points)
+        Y=np.sin(np.arange(points)/points*3*np.pi+time.time())
+        C=pyqtgraph.hsvColor(time.time()/5%1,alpha=.5)
+        pen=pyqtgraph.mkPen(color=C,width=5)
+        self.AvgPlot.plot(X,Y,pen=pen,clear=True)
+           
+    
+    def update(self):
+        t1=time.clock()
+        points=100 #number of data points
+        X=np.arange(points)
+        Y=np.sin(np.arange(points)/points*3*np.pi+time.time())
+        C=pyqtgraph.hsvColor(time.time()/5%1,alpha=.5)
+        pen=pyqtgraph.mkPen(color=C,width=5)
+        self.AvgPlot.plot(X,Y,pen=pen,clear=True)
+        print("update took %.02f ms"%((time.clock()-t1)*1000))        
+        QtCore.QTimer.singleShot(1, self.update) # QUICKLY repeat
+
     def ExitApp(self):
         self.Timer.Stop()
         self.camera.release()
@@ -136,6 +162,6 @@ class CamShow(QMainWindow,Ui_CamShow):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     ui=CamShow()
-    ui.show()
+    ui.show()   
+    ui.showUpdate() #start with showUadapte()   
     sys.exit(app.exec_())
-    
