@@ -73,6 +73,7 @@ class CamShow(QMainWindow,Ui_CamShow):
 
     def TimerOutFun(self):
         success,self.img=self.camera.read()
+        self.gray = cv2.cvtColor(self.img,cv2.COLOR_RGB2GRAY) #轉灰階
         if success:   
             #self.Image = self.ColorAdjust(img)
             
@@ -84,7 +85,7 @@ class CamShow(QMainWindow,Ui_CamShow):
 
     def CopyImg(self):
         ret=QRect(50,200,411,10)       
-        CVimg = cv2.cvtColor(self.img,cv2.COLOR_BGR2RGB)       
+        CVimg = cv2.cvtColor(self.gray,cv2.COLOR_BGR2RGB)       
         qimg = qimage2ndarray.array2qimage(CVimg)
         b=qimg.copy(ret)
 
@@ -94,7 +95,7 @@ class CamShow(QMainWindow,Ui_CamShow):
                        
     
     def DispImg(self):
-        CVimg = cv2.cvtColor(self.img,cv2.COLOR_BGR2RGB)
+        CVimg = cv2.cvtColor(self.gray,cv2.COLOR_BGR2RGB)
         qimg = qimage2ndarray.array2qimage(CVimg)
         self.DispLb.setPixmap(QPixmap(qimg))
         self.DispLb.show()

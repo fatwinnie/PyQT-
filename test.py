@@ -1,32 +1,30 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\Ting\Downloads\PyQT\PyQT--master\test.ui'
+# Form implementation generated from reading ui file 'c:\Users\TING\Desktop\PyQT-\test.ui'
 #
-# Created by: PyQt5 UI code generator 5.13.0
+# Created by: PyQt5 UI code generator 5.11.3
 #
 # WARNING! All changes made in this file will be lost!
 
-
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 
 class Ui_CamShow(object):
     def setupUi(self, CamShow):
         CamShow.setObjectName("CamShow")
-        CamShow.resize(1026, 719)
+        CamShow.resize(1026, 786)
         CamShow.setMinimumSize(QtCore.QSize(1026, 0))
         CamShow.setMaximumSize(QtCore.QSize(1026, 786))
         self.centralwidget = QtWidgets.QWidget(CamShow)
         self.centralwidget.setObjectName("centralwidget")
         self.ROIFm = QtWidgets.QFrame(self.centralwidget)
-        self.ROIFm.setGeometry(QtCore.QRect(20, 410, 521, 251))
+        self.ROIFm.setGeometry(QtCore.QRect(20, 400, 521, 321))
         self.ROIFm.setFrameShape(QtWidgets.QFrame.Box)
         self.ROIFm.setFrameShadow(QtWidgets.QFrame.Raised)
         self.ROIFm.setObjectName("ROIFm")
-        self.label_2 = QtWidgets.QLabel(self.ROIFm)
-        self.label_2.setGeometry(QtCore.QRect(60, 50, 351, 161))
-        self.label_2.setText("")
-        self.label_2.setObjectName("label_2")
+        self.DispCopyImg = QtWidgets.QLabel(self.ROIFm)
+        self.DispCopyImg.setGeometry(QtCore.QRect(60, 40, 411, 261))
+        self.DispCopyImg.setText("")
+        self.DispCopyImg.setObjectName("DispCopyImg")
         self.label_7 = QtWidgets.QLabel(self.ROIFm)
         self.label_7.setGeometry(QtCore.QRect(10, 10, 91, 21))
         self.label_7.setStyleSheet("font: 12pt \"Calibri\";")
@@ -68,18 +66,18 @@ class Ui_CamShow(object):
         self.ExitBt.setGeometry(QtCore.QRect(440, 20, 71, 28))
         self.ExitBt.setObjectName("ExitBt")
         self.AvgPlot = PlotWidget(self.centralwidget)
-        self.AvgPlot.setGeometry(QtCore.QRect(550, 410, 461, 251))
+        self.AvgPlot.setGeometry(QtCore.QRect(550, 400, 461, 321))
         self.AvgPlot.setObjectName("AvgPlot")
         self.label_8 = QtWidgets.QLabel(self.centralwidget)
-        self.label_8.setGeometry(QtCore.QRect(550, 380, 111, 31))
+        self.label_8.setGeometry(QtCore.QRect(550, 370, 131, 31))
         self.label_8.setStyleSheet("font: 12pt \"Calibri\";")
         self.label_8.setObjectName("label_8")
         self.btnUpdate = QtWidgets.QPushButton(self.centralwidget)
-        self.btnUpdate.setGeometry(QtCore.QRect(660, 390, 91, 21))
+        self.btnUpdate.setGeometry(QtCore.QRect(680, 370, 91, 31))
         self.btnUpdate.setObjectName("btnUpdate")
         CamShow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(CamShow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1026, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1026, 25))
         self.menubar.setObjectName("menubar")
         CamShow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(CamShow)
@@ -103,4 +101,5 @@ class Ui_CamShow(object):
         self.ExitBt.setText(_translate("CamShow", "Exit"))
         self.label_8.setText(_translate("CamShow", "垂直強度影像"))
         self.btnUpdate.setText(_translate("CamShow", "Update Wave"))
+
 from pyqtgraph import PlotWidget

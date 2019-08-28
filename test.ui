@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1026</width>
-    <height>719</height>
+    <height>786</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -32,7 +32,7 @@
       <x>20</x>
       <y>400</y>
       <width>521</width>
-      <height>261</height>
+      <height>321</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -41,13 +41,13 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="DispCopyImg">
      <property name="geometry">
       <rect>
        <x>60</x>
-       <y>50</y>
-       <width>351</width>
-       <height>161</height>
+       <y>40</y>
+       <width>411</width>
+       <height>261</height>
       </rect>
      </property>
      <property name="text">
@@ -219,7 +219,7 @@
       <x>550</x>
       <y>400</y>
       <width>461</width>
-      <height>261</height>
+      <height>321</height>
      </rect>
     </property>
    </widget>
@@ -228,7 +228,7 @@
      <rect>
       <x>550</x>
       <y>370</y>
-      <width>111</width>
+      <width>131</width>
       <height>31</height>
      </rect>
     </property>
@@ -242,10 +242,10 @@
    <widget class="QPushButton" name="btnUpdate">
     <property name="geometry">
      <rect>
-      <x>650</x>
+      <x>680</x>
       <y>370</y>
       <width>91</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -259,7 +259,7 @@
      <x>0</x>
      <y>0</y>
      <width>1026</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
@@ -275,4 +275,3 @@
  <resources/>
  <connections/>
 </ui>
-
